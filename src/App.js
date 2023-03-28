@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Button from "@mui/material/Button";
+import DragDrop from "../src/components/Dropzone";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <img src={require("../src/assets/FinTrackLogo.png")} className="logo" />
+      </div>
+      <div className="main-body">
+        <div className="left-side">
+          <p className="left-header">
+            Upload a Financial Statement
+            <br /> Below
+          </p>
+          <br></br>
+          <div className="left-drop">
+            <DragDrop />
+          </div>
+          <div className="button-container">
+            <Button variant="contained" className="button" sx={{background: "#3c81d3", fontSize:"20px", fontFamily:"Red Hat Display", fontWeight:"700", textTransform:"none"}}>
+              Analyse Funds
+            </Button>
+          </div>
+        </div>
+        <div className="right-side">
+          <img
+            src={require("../src/assets/illustration_1.png")}
+            className="illustration1"
+          />
+        </div>
+      </div>
     </div>
   );
 }
