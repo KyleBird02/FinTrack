@@ -305,3 +305,32 @@
   margin: 0 5% 0 2%;
   font-size: 1.75rem;
 }
+
+/* Analysis */
+
+.analysis > * {
+  margin-left: 2%;
+}
+
+.flag{
+  height: 40px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.flag:hover{
+  transform: translate(0,-5px);
+}
+
+.clear{
+  height: 40px;
+  cursor: pointer;
+}
+
+.clear:hover{
+  transform: translate(0,-5px);
+}
+
+.red-row{
+  background-color: var(--red);
+}
