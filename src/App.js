@@ -1,36 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Button from "@mui/material/Button";
-import DragDrop from "../src/components/Dropzone";
+/* import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup"; */
+import LandingPage from "./components/LandingPage";
+import Dashboard from "./components/Dashboard";
+import Analysis from "./components/Analysis";
 
 function App() {
   return (
-    <div className="App">
-      <div className="header">
-        <img src={require("../src/assets/FinTrackLogo.png")} className="logo" />
-      </div>
-      <div className="main-body">
-        <div className="left-side">
-          <p className="left-header">
-            Upload a Financial Statement
-            <br /> Below
-          </p>
-          <br></br>
-          <div className="left-drop">
-            <DragDrop />
-          </div>
-          <div className="button-container">
-            <Button variant="contained" className="button" sx={{background: "#3c81d3", fontSize:"20px", fontFamily:"Red Hat Display", fontWeight:"700", textTransform:"none"}}>
-              Analyse Funds
-            </Button>
-          </div>
-        </div>
-        <div className="right-side">
-          <img
-            src={require("../src/assets/illustration_1.png")}
-            className="illustration1"
-          />
-        </div>
-      </div>
+    <div className="screen">
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/analysis" element={<Analysis />} />
+          {/* <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route path="/registration" element={<RegistrationForm />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
