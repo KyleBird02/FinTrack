@@ -9,7 +9,8 @@ def PDFToCSV(filesPath):
       i = 1
       table_settings = {
         "vertical_strategy": "lines",
-        "horizontal_strategy": "text"
+        "horizontal_strategy": "text",
+        "intersection_x_tolerance": 15
       }
       for page in pdf.pages:
         # tables = page.find_tables()     
