@@ -334,3 +334,66 @@
 .red-row{
   background-color: var(--red);
 }
+
+.foot{
+  margin-top: 5%;
+}
+
+/* Report */
+
+.report > * {
+  margin-left: 2%;
+}
+
+.chart-container{
+  width: 50%;
+}
+
+.col{
+  flex:60%;
+}
+
+.card-report {
+  height: 100%;
+  width: 90%;
+  border: 1px solid rgba(181, 181, 181, 0.71);
+  border-radius: 22px;
+  background-color: #FFE3E0;
+}
+
+.report-percent{
+  font-size: 6rem;
+  color: #ff5141cc;
+}
+
+.card-comp2{
+  color: var(--gray);
+  font-weight: var(--fw-700);
+}
+
+.report-generation-dets-title{
+  font-size: var(--fs-550);
+  font-weight: var(--fw-700);
+  margin-bottom: 1%;
+}
+
+.report-generation-dets{
+  margin-left: 8%;
+  font-weight: var(--fw-600);
+}
+
+.hai{
+  margin-left: 10%;
+}
+
+.setWidth{
+  width: 20vw;
+}
+
+.text{
+  width: 30vw;
+}
+
+.report-bottom{
+  margin-bottom: 100px;
+}

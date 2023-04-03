@@ -50,7 +50,9 @@ function Dashboard() {
               <div className="trans-header">
                 <span className="row">
                   <p className="column">Latest Transactions</p>
-                  <p className="view-all">View All</p>
+                  <Link to="/analysis" className="link">
+                    <p className="view-all">View All</p>
+                  </Link>
                 </span>
               </div>
               <div className="trans-body row">
@@ -120,10 +122,10 @@ function Dashboard() {
             <div className="card">
               <div className="card-content">
                 <div className="card-header">
-                  <p>Current Account Balance</p>
+                  <p>Fraud Rating Score (FRS)</p>
                 </div>
                 <div className="card-amt">
-                  <p>₹1,20,000.00</p>
+                  <p>92.00%</p>
                 </div>
                 <div className="card-footer">
                   <p className="green">

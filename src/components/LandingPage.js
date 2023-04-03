@@ -12,7 +12,7 @@ function LandingPage() {
       <div className="main-body">
         <div className="left-side">
           <p className="left-header">
-            Upload a Financial Statement
+            Upload a Financial Statements
             <br /> Below
           </p>
           <br></br>
