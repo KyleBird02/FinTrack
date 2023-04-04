@@ -9,8 +9,35 @@ import TableRow from "@mui/material/TableRow";
 import { Link } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 function Report() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+    setTimeout(() => {
+      window.location.href = "http://localhost:3000/";
+    }, 2000);
+  };
+
+  const handleClicker = () => {
+    window.print();
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <div className="report">
       <div className="header-shark">
@@ -18,7 +45,7 @@ function Report() {
       </div>
       <div className="report-body">
         <div className="dash-header">
-          <p>Report for (Account Number)</p>
+          <p>Report for 12345678901</p>
         </div>
         <div>
           <div className="donut-header">
@@ -40,7 +67,7 @@ function Report() {
               <div className="card-report">
                 <div className="card-content">
                   <div className="card-amt report-percent">
-                    <p>92.00%</p>
+                    <p>92.38%</p>
                   </div>
                   <div className="card-footer">
                     <p className="green">
@@ -108,31 +135,120 @@ function Report() {
               </TableBody>
             </Table>
           </TableContainer>
-          <div className="donut-header">
-            <p>Report Generation Details</p>
-          </div>
-          <div className="report-bottom">
-            <p className="report-generation-dets-title">
-              Reviewer Name:{" "}
-              <span className="report-generation-dets">Kyle Dsouza</span>
-            </p>
-            <p className="report-generation-dets-title">
-              Review Date:{" "}
-              <span className="report-generation-dets hai">04/04/2023</span>
-            </p>
-            <p className="report-generation-dets-title">
-              Review Reason:{" "}
-              <span className="report-generation-dets">
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="Reason"
-                  variant="outlined"
-                  className="text"
-                  multiline
-                  maxRows={4}
+          <div className="row">
+            <div className="column">
+              <div className="donut-header">
+                <p>Report Generation Details</p>
+              </div>
+              <div className="report-bottom">
+                <p className="report-generation-dets-title">
+                  Reviewer Name:{" "}
+                  <span className="report-generation-dets">Kyle Dsouza</span>
+                </p>
+                <p className="report-generation-dets-title">
+                  Review Date:{" "}
+                  <span className="report-generation-dets hai">04/04/2023</span>
+                </p>
+                <p className="report-generation-dets-title">
+                  Review Reason:{" "}
+                  <span className="report-generation-dets">
+                    <TextField
+                      id="outlined-multiline-flexible"
+                      label="Reason"
+                      variant="outlined"
+                      className="text"
+                      multiline
+                      maxRows={4}
+                    />
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="column">
+              <div className="donut-header">
+                <p>Digital Signature</p>
+                <img
+                  src={require("../assets/Kyle_Signature.png")}
+                  className="dig-sig"
                 />
-              </span>
-            </p>
+              </div>
+            </div>
+          </div>
+          <div className="one-line">
+            <div className="btn-container">
+              {/* <Link to="/" className="link">
+                <Button
+                  variant="contained"
+                  className="button-save"
+                  onClick={handleClick}
+                  sx={{
+                    background: "#157347",
+                    fontSize: "20px",
+                    fontFamily: "Red Hat Display",
+                    fontWeight: "700",
+                    textTransform: "none",
+                  }}
+                >
+                  Save
+                </Button>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={6000}
+                  onClose={handleClose}
+                >
+                  <Alert
+                    onClose={handleClose}
+                    severity="success"
+                    sx={{ width: "100%" }}
+                  >
+                    This is a success message!
+                  </Alert>
+                </Snackbar>
+              </Link> */}
+              <Button
+                variant="contained"
+                className="button-save"
+                onClick={handleClick}
+                sx={{
+                  background: "#157347",
+                  fontSize: "20px",
+                  fontFamily: "Red Hat Display",
+                  fontWeight: "700",
+                  textTransform: "none",
+                }}
+              >
+                Save
+              </Button>
+              <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+              >
+                <Alert
+                  onClose={handleClose}
+                  severity="success"
+                  sx={{ width: "100%" }}
+                >
+                  Report has been saved!
+                </Alert>
+              </Snackbar>
+            </div>
+            <div className="btn-container">
+              <Button
+                variant="contained"
+                className="button-print"
+                onClick={handleClicker}
+                sx={{
+                  background: "#3c81d3",
+                  fontSize: "20px",
+                  fontFamily: "Red Hat Display",
+                  fontWeight: "700",
+                  textTransform: "none",
+                }}
+              >
+                Print
+              </Button>
+            </div>
           </div>
         </div>
       </div>

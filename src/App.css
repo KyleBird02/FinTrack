@@ -397,3 +397,28 @@
 .report-bottom{
   margin-bottom: 100px;
 }
+
+.dig-sig{
+  height: 200px;
+}
+
+.btn-container{
+  margin-bottom: 5%;
+}
+
+.one-line{
+  display: flex;
+  gap: 5rem;
+}
+
+.button-save{
+  width: 15vw;
+}
+
+.button-save:hover{
+  background-color: #157347;
+}
+
+.button-print{
+  width: 15vw;
+}
